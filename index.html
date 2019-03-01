@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Billing software</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+	.container-fluid {
+		width: 700px;
+		height: 450px;
+		margin-top:80px;
+		border:2px solid black;
+		border-radius: 20px;
+	}
+	h2 {
+		background:green;
+	    border:2px solid black;	
+	    border-radius: 40px;
+	
+	}
+	.btn {
+		width: 160px;
+		height: 35px;
+	}
+	.btn:hover{
+		background:black;
+		color:white;
+	}
+	p{
+		font-size: 18px;
+		font-family: verdana;
+	}
+	img{
+		border:2px solid red;
+		border-radius: 20px;
+	}
+
+</style>
+<body>
+	<div class="container-fluid bg-warning">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+				<br>
+				
+				<h2>COOL BIZ</h2>
+
+				<br>
+				<div class="row">
+				<div  class="col-lg-6 col-md-6 col-sm-12">
+					<a href="home.html"><button type="button" class="btn btn-primary">HOME</button></a>
+				</div>
+				<div  class="col-lg-6 col-md-6 col-sm-12">
+					<a href="Billing.html"><button type="button" class="btn btn-primary">BILLING</button></a>
+				</div>
+			</div>
+			<br>
+		
+			<img src="img/hotel1.webp" width="300px" height="130px">
+			    <p id="p">Adayar branch</p>
+			    <p id="p">Chennai</p>
+			</div>
+		</div>
+		<div class="row">
+
+	<div class="col-lg-4 col-md-4 col-sm-12">
+		<br>
+		
+	<input type="text" class="form-control" placeholder="item" id="addmenu">
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 ">
+	<br>
+	
+		<input  type="text" class="form-control" placeholder="price" id="addprice">
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-12 text-center">
+		<br>
+		
+		<button type="button" onclick="myFunction()" class="btn btn-primary">ADD</button>
+		<br>
+		
+	</div>
+   </div>
+</div>
+</div>
+   
+<script>
+	var user=[]
+
+	 function myFunction(){
+	 	var x=document.getElementById("addmenu").value;
+	 	var y=document.getElementById("addprice").value;
+	 	
+
+	 	var data = {
+	 		'menu':x,
+	 		'amount':y,
+         } 
+      console.log(user)
+
+      user.push(data)
+      localStorage.setItem('user1',JSON.stringify(user));
+
+      var get=JSON.parse(localStorage.getItem('user'));
+   console.log(get)
+     
+     }
+</script>
+</body>
+</html>
